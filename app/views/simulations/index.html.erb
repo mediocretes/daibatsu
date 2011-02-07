@@ -1,0 +1,48 @@
+<h1>Daibatsu IPS System<h1>
+<h3>Integrated Punishment Simulator</h3>
+
+<table>
+  <tr> 
+    <th>Punishment</th>
+    <th>Average Success</th>
+  </tr>
+  <% for punishment in @punishments %>
+  <tr>
+    <td><%=h punishment.name %></td>
+    <td><%=h punishment.average_simulation %></td>
+    <td><%= link_to "Simulate", :controller => :simulations, :action => :simulate, :punishment => punishment.id %></td>
+  </tr>
+  <% end %>
+</table>
+
+<h3>Currently Simulating</h3>
+<table>
+  <tr> 
+    <th>Punishment</th>
+    <th>Submitter</th>
+  </tr>
+  <% for job in @jobs %>
+  <% job = job['args'][0] %>
+  <tr>
+    <td><%=h Punishment.find(job['punishment_id']).name %></td>
+    <td><%=h job['submitted_by'] %></td>
+    <td><%=h job.inspect %></td>
+  </tr>
+  <% end %>
+</table>
+
+<h3>System Results</h3>
+<table>
+  <tr>
+    <th>Punishment</th>
+    <th>Initiated By</th>
+    <th>Simulation Results</th>
+  </tr>
+  <% for simulation in @simulations %>
+    <tr>
+      <td><%=h simulation.punishment.name %></td>
+      <td><%=h simulation.submitted_by %></td>
+      <td><%=h simulation.dislike %></td>
+    </tr>
+  <% end %>
+</table>

@@ -41,4 +41,8 @@ class PunishmentsController < ApplicationController
     flash[:notice] = "Successfully destroyed punishment."
     redirect_to punishments_url
   end
+
+  def run_simulation
+    @punishmnet = Punishment.find(params[:id])
+  end
 end
