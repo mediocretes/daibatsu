@@ -18,7 +18,7 @@ development:
   adapter: mysql
   encoding: utf8
   database: daibatsu_development
-  username: root
+  username: daibatsu
   password:
   host: localhost
 
@@ -29,7 +29,7 @@ test: &TEST
   adapter: mysql
   encoding: utf8
   database: daibatsu_test
-  username: root
+  username: daibatsu
   password:
   host: localhost
 
