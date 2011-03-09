@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :surveys, :only => [:index, :new, :create]
 
   map.resources :punishments
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

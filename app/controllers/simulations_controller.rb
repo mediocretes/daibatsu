@@ -1,10 +1,7 @@
-require 'mongo'
-
 class SimulationsController < ApplicationController
   def index
     @simulations = Simulation.all
     @punishments = Punishment.all
-    @jobs = Mongo::Connection.new['resque']['simulation'].find().to_a
   end
 
   def simulate
