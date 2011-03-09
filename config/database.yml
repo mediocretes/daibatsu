@@ -20,7 +20,8 @@ development:
   database: daibatsu_development
   username: daibatsu
   password:
-  host: localhost
+  host: 127.0.0.1
+  port: 3306
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -36,7 +37,8 @@ test: &TEST
 production:
   adapter: mysql
   encoding: utf8
-  database: daibatsu_production
-  username: root
+  database: daibatsu_development
+  username: daibatsu
   password: 
-  host: localhost
+  host: 127.0.0.1
+  port: 3306
