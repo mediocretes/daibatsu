@@ -13,10 +13,10 @@ class Simulation < ActiveRecord::Base
     simulation.actually_simulate
   end    
   
-  def self.cron_simulate
+  def self.simulate(options)
     Punishment.find(:all).each do |punishment|
       simulation = punishment.simulations.new
-      simulation.submitted_by = 'cron'
+      simulation.submitted_by = options[:from]
       simulation.actually_simulate
     end
   end
